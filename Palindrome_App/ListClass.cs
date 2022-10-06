@@ -25,7 +25,7 @@ namespace ListLibrary
     {
         private ListNode firstNode;
         private ListNode lastNode;
-        private string name;
+        public string name;
 
         public List(string listName)
         {
@@ -43,6 +43,7 @@ namespace ListLibrary
         {
             return firstNode == null;
         }
+
         public void InsertAtFront(object insertItem)
         {
             if (IsEmpty())
@@ -136,6 +137,28 @@ namespace ListLibrary
                 }
 
                 Console.WriteLine("\n");
+            }
+        }
+
+        public string DisplayReturn()
+        {
+            if (IsEmpty())
+            {
+               return $"Empty {name}";
+            }
+            else
+            {
+                ListNode current = firstNode;
+                string temp = "";
+
+                while (current != null)
+                {   
+                    
+                    temp += current.Data;
+                    current = current.Next;
+                }
+
+                return temp;
             }
         }
     }
